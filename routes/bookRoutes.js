@@ -10,14 +10,14 @@ const {
 
 const bookRouter = express.Router();
 
-bookRouter.post("/books", protect, createBook);
+bookRouter.post("/api/books", protect, createBook);
 
-bookRouter.get("/books", getAllBooks);
+bookRouter.get("/api/books", getAllBooks);
 
-bookRouter.get("/book/:id", getBookById);
+bookRouter.get("/api/book/:id", getBookById);
 
-bookRouter.put("/book/:id", protect, updateBook);
+bookRouter.put("/api/book/:id", protect, updateBook);
 
-bookRouter.delete("/book/:id", protect, deleteBook);
+bookRouter.delete("/api/book/:id", protect, deleteBook);
 
 module.exports = bookRouter;

@@ -8,8 +8,8 @@ const protect = require("../middleware/authMiddleware.js");
 
 const userRouter = express.Router();
 
-userRouter.post("/users/register", registerUser);
+userRouter.post("/api/users/register", registerUser);
 
-userRouter.post("/users/login", loginUser);
+userRouter.post("/api/users/login", loginUser);
 
 module.exports = userRouter;
