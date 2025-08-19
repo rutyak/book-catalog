@@ -8,6 +8,7 @@ const bookSchema = new mongoose.Schema(
       trim: true,
       minLength: [2, "Title must be at least 2 characters long"],
       maxLength: [100, "Title must be at most 100 characters long"],
+      unique: true,
     },
     author: {
       type: String,
