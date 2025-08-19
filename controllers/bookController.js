@@ -8,10 +8,23 @@ const createBook = async (req, res) => {
       return res.status(400).json({ message: "All fields are required" });
     }
 
+    const existingBook = await Book.findOne({ title: title.trim() });
+    if (existingBook) {
+      return res
+        .status(400)
+        .json({ message: "Book with this title already exists" });
+    }
+
     const book = await Book.create(req.body);
 
     res.status(201).json({ message: "Book added successfully", book });
   } catch (error) {
+    if (error.code === 11000) {
+      return res
+        .status(400)
+        .json({ message: "Book with this title already exists" });
+    }
+
     res
       .status(500)
       .json({ message: "Internal server error", error: error.message });
