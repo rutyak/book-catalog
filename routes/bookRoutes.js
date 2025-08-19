@@ -14,10 +14,10 @@ bookRouter.post("/api/books", protect, createBook);
 
 bookRouter.get("/api/books", getAllBooks);
 
-bookRouter.get("/api/book/:id", getBookById);
+bookRouter.get("/api/books/:id", getBookById);
 
-bookRouter.put("/api/book/:id", protect, updateBook);
+bookRouter.put("/api/books/:id", protect, updateBook);
 
-bookRouter.delete("/api/book/:id", protect, deleteBook);
+bookRouter.delete("/api/books/:id", protect, deleteBook);
 
 module.exports = bookRouter;
